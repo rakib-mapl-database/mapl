@@ -1,125 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Development in Progress | Modina Auto Parts Ltd.</title>
+    <title>Wholesale Management Analysis Report | Modina Auto Parts Ltd.</title>
+
+    <meta
+        name="description"
+        content="Modina Auto Parts Ltd. Wholesale Management Analysis Report is currently under development."
+    >
 
     <style>
+        :root {
+            --primary: #0b5cab;
+            --primary-dark: #083b70;
+            --text: #172033;
+            --muted: #667085;
+            --border: #e6eaf0;
+            --surface: #ffffff;
+            --background: #f6f8fb;
+            --success: #16a34a;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             min-height: 100vh;
+            font-family:
+                "Segoe UI",
+                "Noto Sans Bengali",
+                "Noto Sans",
+                Arial,
+                sans-serif;
+
+            color: var(--text);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f8fafc 0%,
+                    #eef5fc 50%,
+                    #f8fafc 100%
+                );
+
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: "Segoe UI", Arial, sans-serif;
 
-            background:
-                radial-gradient(
-                    circle at top left,
-                    #e8f1ff 0%,
-                    transparent 35%
-                ),
-                radial-gradient(
-                    circle at bottom right,
-                    #dce9ff 0%,
-                    transparent 35%
-                ),
-                #f5f8fc;
-
-            color: #1e293b;
-            padding: 20px;
+            padding: 32px 18px;
         }
 
-        .container {
+        /* =========================
+           MAIN CARD
+        ========================= */
+
+        .page {
             width: 100%;
-            max-width: 880px;
+            max-width: 980px;
 
-            background: rgba(255, 255, 255, 0.97);
+            background: var(--surface);
 
-            border-radius: 26px;
-            padding: 55px 45px;
+            border: 1px solid rgba(15, 23, 42, 0.07);
 
-            text-align: center;
+            border-radius: 24px;
+
+            overflow: hidden;
 
             box-shadow:
-                0 25px 70px rgba(15, 23, 42, 0.13);
-
-            border: 1px solid rgba(148, 163, 184, 0.18);
+                0 25px 70px rgba(15, 23, 42, 0.10);
         }
 
-        /* LOGO */
-        .logo {
-            width: 210px;
-            max-width: 80%;
-            height: auto;
+        /* =========================
+           TOP ACCENT
+        ========================= */
 
-            margin: 0 auto 28px;
+        .top-line {
+            height: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary-dark),
+                    var(--primary),
+                    #36a3ff
+                );
+        }
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .content {
+            padding: 62px 70px 45px;
+
+            text-align: center;
+        }
+
+        /* =========================
+           LOGO
+        ========================= */
+
+        .logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 230px;
+            max-width: 75%;
+            height: auto;
 
             display: block;
 
             object-fit: contain;
         }
 
-        .company-name {
-            font-size: 14px;
+        /* =========================
+           COMPANY
+        ========================= */
+
+        .company {
+            color: var(--primary);
+
+            font-size: 13px;
+
             font-weight: 700;
 
             letter-spacing: 2px;
 
-            color: #1677c8;
-
             text-transform: uppercase;
 
-            margin-bottom: 16px;
+            margin-bottom: 15px;
         }
 
+        /* =========================
+           HEADING
+        ========================= */
+
         h1 {
-            font-size: clamp(30px, 5vw, 48px);
+            max-width: 760px;
+
+            margin: 0 auto 20px;
+
+            font-size: clamp(
+                30px,
+                5vw,
+                48px
+            );
 
             line-height: 1.15;
 
-            color: #0f172a;
+            letter-spacing: -1.2px;
 
-            margin-bottom: 20px;
+            font-weight: 750;
+
+            color: #101828;
         }
 
-        .highlight {
-            color: #1677c8;
+        h1 span {
+            color: var(--primary);
         }
 
-        .subtitle {
-            max-width: 700px;
+        /* =========================
+           DESCRIPTION
+        ========================= */
+
+        .description {
+            max-width: 720px;
 
             margin: 0 auto;
 
-            font-size: 17px;
+            color: var(--muted);
 
-            line-height: 1.85;
+            font-size: 16px;
 
-            color: #64748b;
+            line-height: 1.9;
         }
 
-        /* STATUS */
-        .status-box {
-            margin: 35px auto 30px;
-
-            padding: 22px 25px;
-
-            max-width: 650px;
-
-            border-radius: 16px;
-
-            background: #eff6ff;
-
-            border: 1px solid #bfdbfe;
-        }
+        /* =========================
+           STATUS
+        ========================= */
 
         .status {
             display: inline-flex;
@@ -128,172 +200,300 @@
 
             gap: 10px;
 
-            font-size: 16px;
+            margin-top: 32px;
+
+            padding: 11px 18px;
+
+            border-radius: 50px;
+
+            background: #f0fdf4;
+
+            border: 1px solid #bbf7d0;
+
+            color: #166534;
+
+            font-size: 14px;
 
             font-weight: 700;
-
-            color: #075985;
         }
 
-        .dot {
-            width: 11px;
-            height: 11px;
+        .status-dot {
+            position: relative;
+
+            width: 9px;
+            height: 9px;
 
             border-radius: 50%;
 
-            background: #22c55e;
+            background: var(--success);
+        }
 
-            box-shadow:
-                0 0 0 5px rgba(34, 197, 94, 0.12);
+        .status-dot::after {
+            content: "";
 
-            animation: pulse 1.8s infinite;
+            position: absolute;
+
+            inset: -5px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(
+                22,
+                163,
+                74,
+                0.35
+            );
+
+            animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 1;
+            0% {
+                transform: scale(0.7);
+                opacity: 0.9;
             }
 
-            50% {
-                transform: scale(1.25);
-                opacity: 0.65;
+            70% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1.4);
+                opacity: 0;
             }
         }
 
-        /* PROGRESS */
-        .progress-area {
-            margin: 30px auto;
+        /* =========================
+           PROGRESS
+        ========================= */
 
-            max-width: 650px;
+        .progress-section {
+            max-width: 700px;
+
+            margin: 38px auto 0;
 
             text-align: left;
         }
 
-        .progress-header {
+        .progress-info {
             display: flex;
 
             justify-content: space-between;
 
+            align-items: center;
+
             margin-bottom: 10px;
 
-            font-size: 14px;
+            font-size: 13px;
 
-            font-weight: 600;
+            font-weight: 650;
 
-            color: #475569;
+            color: #475467;
         }
 
-        .progress-bar {
-            height: 10px;
+        .percentage {
+            color: var(--primary);
 
-            background: #e2e8f0;
+            font-weight: 750;
+        }
+
+        .progress-track {
+            width: 100%;
+
+            height: 9px;
+
+            background: #edf0f4;
 
             border-radius: 20px;
 
             overflow: hidden;
         }
 
-        .progress-fill {
+        .progress-bar {
             width: 68%;
 
             height: 100%;
 
-            border-radius: 20px;
+            border-radius: inherit;
 
             background:
                 linear-gradient(
                     90deg,
-                    #0f4c81,
-                    #1d9bf0
+                    var(--primary-dark),
+                    var(--primary),
+                    #36a3ff
                 );
+
+            animation:
+                progressLoad 1.5s
+                cubic-bezier(.4,0,.2,1);
         }
 
-        /* FEATURES */
-        .features {
+        @keyframes progressLoad {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 68%;
+            }
+        }
+
+        /* =========================
+           MODULES
+        ========================= */
+
+        .modules {
             display: grid;
 
             grid-template-columns:
                 repeat(3, 1fr);
 
-            gap: 15px;
+            gap: 18px;
 
-            margin-top: 35px;
+            margin-top: 45px;
         }
 
-        .feature {
-            padding: 22px 15px;
+        .module {
+            padding: 25px 20px;
+
+            text-align: left;
+
+            background: #fbfcfe;
+
+            border: 1px solid var(--border);
 
             border-radius: 16px;
 
-            background: #f8fafc;
-
-            border: 1px solid #e2e8f0;
-
-            transition: 0.3s ease;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
         }
 
-        .feature:hover {
-            transform: translateY(-5px);
+        .module:hover {
+            transform: translateY(-4px);
+
+            border-color: #cbd5e1;
 
             box-shadow:
-                0 10px 25px rgba(15, 23, 42, 0.08);
+                0 12px 28px
+                rgba(15, 23, 42, 0.07);
         }
 
-        .feature-icon {
-            font-size: 26px;
+        .module-icon {
+            width: 42px;
+            height: 42px;
 
-            margin-bottom: 10px;
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 11px;
+
+            margin-bottom: 16px;
+
+            background: #eaf3fc;
+
+            color: var(--primary);
+
+            font-size: 20px;
         }
 
-        .feature h3 {
-            font-size: 14px;
+        .module h3 {
+            margin-bottom: 8px;
 
-            color: #1e293b;
+            font-size: 15px;
 
-            margin-bottom: 7px;
+            font-weight: 700;
+
+            color: #1d2939;
         }
 
-        .feature p {
-            font-size: 12px;
-
-            color: #64748b;
-
-            line-height: 1.6;
-        }
-
-        /* FOOTER */
-        .footer {
-            margin-top: 38px;
-
-            padding-top: 22px;
-
-            border-top: 1px solid #e2e8f0;
-
-            color: #94a3b8;
+        .module p {
+            color: #667085;
 
             font-size: 13px;
+
+            line-height: 1.65;
         }
 
-        /* MOBILE */
-        @media (max-width: 650px) {
+        /* =========================
+           FOOTER
+        ========================= */
 
-            .container {
-                padding: 40px 22px;
+        footer {
+            padding: 22px 30px;
 
-                border-radius: 20px;
+            border-top: 1px solid var(--border);
+
+            text-align: center;
+
+            color: #98a2b3;
+
+            font-size: 12px;
+
+            background: #fcfdff;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            body {
+                padding: 18px 12px;
             }
 
-            .logo {
-                width: 170px;
+            .content {
+                padding: 45px 25px 35px;
             }
 
-            .features {
+            .modules {
                 grid-template-columns: 1fr;
             }
 
-            .subtitle {
+            .description {
                 font-size: 15px;
+            }
+
+            h1 {
+                letter-spacing: -0.6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .page {
+                border-radius: 18px;
+            }
+
+            .content {
+                padding: 38px 18px 30px;
+            }
+
+            .logo {
+                width: 185px;
+            }
+
+            .company {
+                font-size: 11px;
+                letter-spacing: 1.5px;
+            }
+
+            .status {
+                font-size: 12px;
+            }
+
+            .module {
+                padding: 20px;
+            }
+
+            footer {
+                font-size: 11px;
             }
         }
     </style>
@@ -301,121 +501,125 @@
 
 <body>
 
-    <main class="container">
+    <main class="page">
 
-        <!-- Modina Auto Parts Ltd. Official Logo -->
-        <img
-            class="logo"
-            src="https://modinaautopartsltd.com/_next/static/media/logo.40df2f61.svg"
-            alt="Modina Auto Parts Ltd. Logo"
-        >
+        <div class="top-line"></div>
 
-        <div class="company-name">
-            Modina Auto Parts Ltd.
-        </div>
+        <section class="content">
 
-        <h1>
-            Whole Sales Management
-            <span class="highlight">Analysis Report</span>
-        </h1>
+            <!-- Official Company Logo -->
+            <div class="logo-wrapper">
+                <img
+                    class="logo"
+                    src="https://modinaautopartsltd.com/_next/static/media/logo.40df2f61.svg"
+                    alt="Modina Auto Parts Ltd."
+                >
+            </div>
 
-        <p class="subtitle">
-            আমাদের Whole Sales Management Analysis Report
-            Development-এর কাজ বর্তমানে চলমান রয়েছে।
-            উন্নত কার্যকর ব্যবস্থাপনা বিশ্লেষণ
-            নিশ্চিত করার লক্ষ্যে সিস্টেমটি উন্নয়ন ও পরিমার্জনের
-            কাজ চলছে।
-        </p>
+            <!-- Company Name -->
+            <div class="company">
+                Modina Auto Parts Ltd.
+            </div>
 
-        <!-- Development Status -->
-        <div class="status-box">
+            <!-- Main Heading -->
+            <h1>
+                Wholesale Management
+                <span>Analysis Report</span>
+            </h1>
+
+            <!-- Description -->
+            <p class="description">
+                আমাদের Wholesale Management Analysis Report
+                Development-এর কাজ বর্তমানে চলমান রয়েছে।
+                ব্যবসায়িক কার্যক্রমের তথ্য বিশ্লেষণ, ব্যবস্থাপনা
+                পর্যবেক্ষণ এবং সিদ্ধান্ত গ্রহণকে আরও কার্যকর করার
+                লক্ষ্যে রিপোর্ট সিস্টেমটি উন্নয়ন ও পরিমার্জনের
+                কাজ চলছে।
+            </p>
+
+            <!-- Status -->
             <div class="status">
-                <span class="dot"></span>
-
-                Development Work in Progress
-            </div>
-        </div>
-
-        <!-- Progress -->
-        <div class="progress-area">
-
-            <div class="progress-header">
-                <span>Development Progress</span>
-                <span>68%</span>
+                <span class="status-dot"></span>
+                Development in Progress
             </div>
 
-            <div class="progress-bar">
+            <!-- Progress -->
+            <div class="progress-section">
 
-                <div class="progress-fill"></div>
-
-            </div>
-
-        </div>
-
-        <!-- Features -->
-        <section class="features">
-
-            <div class="feature">
-
-                <div class="feature-icon">
-                    📊
+                <div class="progress-info">
+                    <span>Development Progress</span>
+                    <span class="percentage">25%</span>
                 </div>
 
-                <h3>
-                    Sales Analysis
-                </h3>
-
-                <p>
-                    Wholesale sales performance
-                    analysis and reporting.
-                </p>
+                <div class="progress-track">
+                    <div class="progress-bar"></div>
+                </div>
 
             </div>
 
+            <!-- Modules -->
+            <div class="modules">
 
-            <div class="feature">
+                <article class="module">
 
-                <div class="feature-icon">
-                    📈
-                </div>
+                    <div class="module-icon">
+                        📊
+                    </div>
 
-                <h3>
-                    Business Insights
-                </h3>
+                    <h3>
+                        Wholesale Sales Analysis
+                    </h3>
 
-                <p>
-                    Data-driven insights for
-                    better business decisions.
-                </p>
+                    <p>
+                        পাইকারি বিক্রয় কার্যক্রমের তথ্য
+                        বিশ্লেষণ ও পারফরম্যান্স রিপোর্টিং।
+                    </p>
 
-            </div>
+                </article>
 
 
-            <div class="feature">
+                <article class="module">
 
-                <div class="feature-icon">
-                    ⚙️
-                </div>
+                    <div class="module-icon">
+                        📈
+                    </div>
 
-                <h3>
-                    Management System
-                </h3>
+                    <h3>
+                        Business Performance
+                    </h3>
 
-                <p>
-                    Improved management monitoring
-                    and reporting system.
-                </p>
+                    <p>
+                        ব্যবসায়িক কার্যক্রমের গুরুত্বপূর্ণ
+                        তথ্য ও পারফরম্যান্স বিশ্লেষণ।
+                    </p>
+
+                </article>
+
+
+                <article class="module">
+
+                    <div class="module-icon">
+                        ⚙
+                    </div>
+
+                    <h3>
+                        Management Reporting
+                    </h3>
+
+                    <p>
+                        দ্রুত ও কার্যকর ব্যবস্থাপনা সিদ্ধান্তের
+                        জন্য উন্নত রিপোর্টিং ব্যবস্থা।
+                    </p>
+
+                </article>
 
             </div>
 
         </section>
 
-        <div class="footer">
-
-            © 2026 Modina Auto Parts Ltd.
-            — All Rights Reserved.
-
-        </div>
+        <footer>
+            © 2026 Modina Auto Parts Ltd. &nbsp;|&nbsp; All Rights Reserved.
+        </footer>
 
     </main>
 
